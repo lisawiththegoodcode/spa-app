@@ -1,0 +1,66 @@
+﻿@model AppointmentTracker.Models.ServiceProviderModel
+@inject  AppointmentTracker.Services.IRepository repository
+
+
+@{
+    var appts = repository.GetAppointmentsForProvider(Model.Id);
+    ViewData["Title"] = "Details";
+}
+
+<h2>Provider Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    <br />
+    <h4><strong>@Html.DisplayFor(model => model.Name)'s Appointments</strong></h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Client
+                </th>
+                <th>
+                    Service
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in appts)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppointmentTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Client.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Service)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+

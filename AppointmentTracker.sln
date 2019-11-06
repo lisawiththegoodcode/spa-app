@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTracker", "AppointmentTracker\AppointmentTracker.csproj", "{DBF98F79-77AF-433B-BD18-4B8CC2C12BA0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentTracker.Tests", "AppointmentTracker.Tests\AppointmentTracker.Tests.csproj", "{5547BBA4-C860-4D5A-8835-09230D20FD82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBF98F79-77AF-433B-BD18-4B8CC2C12BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF98F79-77AF-433B-BD18-4B8CC2C12BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF98F79-77AF-433B-BD18-4B8CC2C12BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF98F79-77AF-433B-BD18-4B8CC2C12BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5547BBA4-C860-4D5A-8835-09230D20FD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5547BBA4-C860-4D5A-8835-09230D20FD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5547BBA4-C860-4D5A-8835-09230D20FD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5547BBA4-C860-4D5A-8835-09230D20FD82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5179F43F-6147-46A2-8863-B0674C8C2C3F}
+	EndGlobalSection
+EndGlobal

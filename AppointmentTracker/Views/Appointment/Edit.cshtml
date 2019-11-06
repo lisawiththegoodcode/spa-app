@@ -1,0 +1,58 @@
+﻿@model AppointmentTracker.Models.AppointmentModel
+@inject AppointmentTracker.Services.IRepository repository
+
+@{
+    var clientItems = repository.Customers.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
+    var providerItems = repository.Providers.Select(x => new SelectListItem(x.Name, x.Id.ToString()));
+
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Appointment</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" readonly class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentTime" class="control-label"></label>
+                <input asp-for="AppointmentTime" class="form-control" />
+                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Client" class="control-label"></label>
+                <select asp-for="ClientId" asp-items="@clientItems" class="form-control"></select>
+                @*@Html.EditorFor(x => x.ClientId)*@
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Service" class="control-label"></label>
+                <input asp-for="Service" class="form-control" />
+                <span asp-validation-for="Service" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Provider" class="control-label"></label>
+                <select asp-for="ProviderId" asp-items="@providerItems" class="form-control"></select>
+                @*@Html.EditorFor(x => x.Provider)*@
+                <span asp-validation-for="ProviderId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
